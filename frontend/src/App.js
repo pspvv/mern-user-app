@@ -6,13 +6,13 @@ function App() {
   const [form, setForm] = useState({ name: '', email: '', age: '' });
 
   const fetchUsers = async () => {
-    const res = await axios.get('http://localhost:5000/api/users');
+    const res = await axios.get('https://mern-user-app-2sro.onrender.com/api/users');
     setUsers(res.data);
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    await axios.post('http://localhost:5000/api/users', form);
+    await axios.post('https://mern-user-app-2sro.onrender.com/api/users', form);
     setForm({ name: '', email: '', age: '' });
     fetchUsers();
   };
